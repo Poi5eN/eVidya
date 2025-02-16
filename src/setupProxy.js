@@ -4,8 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      // target: 'https://eserver-i5sm.onrender.com',
-      target: 'https://eserver-i5sm.onrender.com',
+      target: process.env.REACT_APP_API_URL, // Use the environment variable here
       changeOrigin: true,
     })
   );
